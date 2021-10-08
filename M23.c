@@ -91,6 +91,7 @@ int matr(int apex, FILE *fp1) {
 
 
 int main() {
+
     FILE *fp1 = fopen("gr.txt", "r");
     FILE *fp2 = fopen("im.gv", "w");
 
@@ -100,6 +101,10 @@ int main() {
 
     //Считываем из файла txt
     while ((c = fgetc(fp1))!=EOF) {
+        if (c == ' '){
+            continue;
+        }
+        
         graf[i] = c;
         //количество рёбер
         if (graf[i] == '-') {
